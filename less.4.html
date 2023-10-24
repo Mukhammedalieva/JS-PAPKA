@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bancomat 2-etap</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const CARDS =[
+			{pin: '1234', balance: 5000},
+			{pin: '4321', balance: 12000},
+			{pin: '5555', balance: 0}	
+			];
+
+		let b = null
+
+		for(let x= 3; x > -1; x--){
+			let a = prompt('parol')
+			for(let i = 0; i< CARDS.length; i++){
+				if(CARDS[i].pin ===a){
+					x = 0
+					b = CARDS[i]
+				}
+			}
+			if(b){
+				console.log(`balance: ${b.balance} som.`);
+			}else{
+				if(x===0){
+					console.log('карта заблакированно');
+				}else{
+					console.log('сизде' + x + 'мумкунчулук калды')
+				}
+			}
+		}
+		
+		
+		
+	</script>
+
+</body>
+</html>

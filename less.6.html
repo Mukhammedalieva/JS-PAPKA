@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bancomat 4-etap</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const CARDS =[
+			{pin: '1234', balance: 5000},
+			{pin: '4321', balance: 12000},
+			{pin: '5555', balance: 0}	
+			];
+
+		let b = null
+
+		for(let x= 3; x > -1; x--){
+			let a = prompt('parol')
+			for(let i = 0; i< CARDS.length; i++){
+				if(CARDS[i].pin ===a){
+					x = 0
+					b = CARDS[i]
+				}
+			}
+			if(b){
+				console.log(`balance: ${b.balance} som.`);
+				for(let con = true; con;)
+					let c = +prompt("kancha som alasyz")
+					let d = ((c/100)*5)
+					let e = c+d
+
+					if(b.balance<e){
+						console.log('У вас на карте осталось: ' + (b.balance - e) + 'som schety')
+						con = false;
+					}else{
+					b.balance = d
+					console.log('ne hvataet ' + (e - b.balance));
+					con = confirm('Продолжить');
+					if(!con){
+						console.log('Спасибо! Вазмите вашу карту')
+					}
+				}
+			}else{
+				if(x===0){
+					console.log('карта заблакированно');
+				}else{
+					console.log('сизде' + x + 'мумкунчулук калды')
+				}
+			
+			}
+
+		}
+		// const CARDS = [
+		// 	{pin: 1234, balance: 10000},
+		// 	{pin: 4321, balance: 15000},
+		// 	{pin: 555, balance: 0}
+		// ];
+		// let a = null
+		// for(let i = 3; i>-1; i--){
+		// 	let b = +prompt('parol')
+		// 	for(let x = 0; x<CARDS.length; x++){
+		// 		if(CARDS[i].pin ===b){
+		// 			i=0
+		// 			a = CARDS[i]
+				
+		// 		}
+		// 	}
+		// 	if(a){
+		// 		console.log("balance: " + a.balance + "som")
+		// 		let c = prompt("kancha alasuz")
+		// 		let d = a - (c*5)/100
+		// 		let e = c + d
+		// 		if(a.balance>e){
+		// 			console.log("kartada" + (a.balance-c))
+		// 		}
+		// 		else{
+		// 			console.log("ne hvataet" +(a.balance-c))
+		// 		}
+
+		// 	}
+		// 	if(){
+		// 		confirum()
+		// 	}else{
+
+		// 	}
+		// 	else{
+		// 		if(i===0){
+		// 			console.log('karta bloktoldu')
+		// 		}else{
+		// 			console.log('sizde' + i + "kaldy" )
+		// 		}
+		// 	}
+		// }
+
+	</script>
+
+</body>
+</html>

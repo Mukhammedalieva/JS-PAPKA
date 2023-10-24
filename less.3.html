@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bancomat 1-etap</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const CARDS = [
+			{pin: '1234', balance: 500},
+			{pin: '4321', balance: 15000},
+			{pin: '5555', balance: 0},
+		];
+		const a = prompt('your pin');
+		let b = null;
+		for(let i = 0; i < CARDS.length; i++){
+			if(a===CARDS[i].pin){
+				b = CARDS[i];
+			}
+		}
+		if(b){
+			console.log(`balance: ${b.balance} som`);
+		}else{
+			console.log(`incorrect pin!`);
+		}
+		
+	</script>
+
+</body>
+</html>

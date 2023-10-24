@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bancomat 3 -etap</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const CARDS =[
+			{pin: '1234', balance: 5000},
+			{pin: '4321', balance: 12000},
+			{pin: '5555', balance: 0}	
+			];
+
+		let b = null
+
+		for(let x= 3; x > -1; x--){
+			let a = prompt('parol')
+			for(let i = 0; i< CARDS.length; i++){
+				if(CARDS[i].pin ===a){
+					x = 0
+					b = CARDS[i]
+				}
+			}
+			if(b){
+				console.log(`balance: ${b.balance} som.`);
+				let c = +prompt("kancha som alasyz")
+				let d = ((c/100)*5)
+				let e = c+d
+				if(b.balance>e){
+					console.log('У вас на карте осталось: ' + (b.balance - e) + 'som schety')
+				}
+				else{
+					console.log('ne hvataet ' + (e - b.balance))
+				}
+			}else{
+				if(x===0){
+					console.log('карта заблакированно');
+				}else{
+					console.log('сизде' + x + 'мумкунчулук калды')
+				}
+			}
+		}
+	</script>
+
+</body>
+</html>
+		<!-- let pin = +prompt('parol')
+	
+		if(pin == 1212){
+			alert('картанызда 10000 сом бар')
+		}
+		let a = +prompt('канча сом керек')
+		let b = (10000-((a*5)/100)-a)
+		 if(b < 10000){
+			alert('У вас на карте осталось: ' + b + 'som schety') 
+		}else if(b > 10000){
+			alert('У вас не хватает ' + (c-10000) + ' сом')
+		} 
+		else{
+			alert('пароль туура эмес')
+		} -->
